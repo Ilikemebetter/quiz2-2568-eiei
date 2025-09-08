@@ -28,6 +28,12 @@ export default function FoodTracker() {
     };
    setItems((prev) => [...prev, newItem]);
    };
+  const computeTotalPayment = () => {
+    let total = 0;
+    let extratotal =0;
+    total += extratotal;
+    return total;
+  };
 
 
   return (
@@ -40,8 +46,8 @@ export default function FoodTracker() {
         <label className="form-label" ></label>
         <TextInput
           label="Input label"
-          value={items}
-          onChange={(event) =>setItems(event.currentTarget.value)}
+         // value={items}
+        //  onChange={(event) =>setItems(event.currentTarget.value)}
           
         />
       </div>
@@ -51,13 +57,17 @@ export default function FoodTracker() {
       <Divider my="md" />
       
       {/* Type additional total cost here. */}
-      <Title order={4}>Total cost: {} Baht</Title>
-      <Stack my="sm">      {/* Type additional card here. */} </Stack>
+      <Title order={4}>Total cost: {computeTotalPayment().toLocaleString()} Baht</Title>
+      <Stack my="sm">   
+         Main Course:{} Baht
+         Drink:{} Baht 
+         Dessert:{} baht </Stack>
 
       <Divider my="md" />
       {/* Type additional card here. */}
 
       <Stack>{/* Type additional food card list here. */}</Stack>
+
 
     </Container>
   );
